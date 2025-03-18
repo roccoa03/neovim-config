@@ -1,0 +1,62 @@
+local function clone_paq()
+  local path = vim.fn.stdpath("data") .. "/site/pack/paqs/start/paq-nvim"
+  local is_installed = vim.fn.empty(vim.fn.glob(path)) == 0
+  if not is_installed then
+    vim.fn.system { "git", "clone", "--depth=1", "https://github.com/savq/paq-nvim.git", path }
+    return true
+  end
+end
+
+
+
+require("paq") {
+	"savq/paq-nvim", -- Let Paq manage itself
+
+	{ 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
+
+
+	--Colorizer 
+--	{'norcalli/nvim-colorizer.lua'},
+--	{'brenoprata10/nvim-highlight-colors'},
+
+	-- LSP Support
+	{'neovim/nvim-lspconfig'};
+	{'echasnovski/mini.nvim'},
+	{"catppuccin/nvim"},
+
+	{ 'mfussenegger/nvim-jdtls' };
+
+	-- Autocompletion
+--	{'hrsh7th/nvim-cmp'};
+--	{'hrsh7th/cmp-nvim-lsp'};
+--	{'L3MON4D3/LuaSnip'};
+--	{ 'hrsh7th/nvim-cmp',
+	--	config = function ()
+	--	require'cmp'.setup {
+	--		snippet = {
+	----			expand = function(args)
+	 --   			require'luasnip'.lsp_expand(args.body)
+	 --   		end
+	 ----   	},
+	  --  	sources = {
+	  --  		{ name = 'luasnip' },
+	  ----  		-- more sources
+	   -- 	},
+	   -- }
+	   -- end
+	--},
+--	{ 'saadparwaiz1/cmp_luasnip' },
+
+	--Undo Tree 
+	{ "mbbill/undotree" },
+
+	--FILE EXPLORER
+	{ "stevearc/oil.nvim" },
+
+	-- Harpoon plugin
+	{'nvim-lua/plenary.nvim'};
+	{'ThePrimeagen/harpoon'};
+
+	-- prevent nesting sessions of neovim inside buffer
+	{'samjwill/nvim-unception' };
+}
