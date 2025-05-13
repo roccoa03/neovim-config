@@ -1,10 +1,8 @@
 -- Clone 'mini.nvim' manually in a way that it gets managed by 'mini.deps'
 local path_package = vim.fn.stdpath('data') .. '/site/'
 local mini_path = path_package .. 'pack/deps/start/mini.nvim'
---- 
----@diagnostic disable-next-line: undefined-field
-if not vim.loop.as_stat(mini_path) then
 
+if not vim.loop.fs_stat(mini_path) then
   vim.cmd('echo "Installing `mini.nvim`" | redraw')
   local clone_cmd = {
     'git', 'clone', '--filter=blob:none',
@@ -44,4 +42,20 @@ add ({
 	depends = { 'nvim-lua/plenary.nvim' },
 })
 
+add({
+	source =  "mbbill/undotree",
 
+})
+
+--add({
+--	source = 'nvim-java/nvim-java',
+--	depends = {'nvim-java/nvim-java'},
+--})
+add ({
+	source="rose-pine/neovim",
+})
+
+-- Colorscheme
+add ({
+	source="folke/tokyonight.nvim",
+})

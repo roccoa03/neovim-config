@@ -1,4 +1,5 @@
 require('mini.git').setup()
+require('mini.splitjoin').setup()
 
 require ('mini.statusline').setup({ use_icons = true })
 require('mini.icons').setup()
@@ -61,3 +62,19 @@ vim.keymap.set("v", "<M-k>", ":m '<-2<CR>gv=gv")
 -- Sistema i Keybinding per Move. Entrano in conflitto con 
 -- i keybindings impostati di default per il terminale. 
 
+-- require('mini.animate').setup()
+--
+--
+--
+--
+local gen_loader = require('mini.snippets').gen_loader
+require('mini.snippets').setup({
+  snippets = {
+    -- Load custom file with global snippets first (adjust for Windows)
+    -- gen_loader.from_file('~/.config/nvim/snippets/global.json'),
+
+    -- Load snippets based on current language by reading files from
+    -- "snippets/" subdirectories from 'runtimepath' directories.
+    gen_loader.from_lang(),
+  },
+})

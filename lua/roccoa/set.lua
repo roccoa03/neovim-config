@@ -11,11 +11,11 @@ vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.ignorecase = true
 
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 12
 --vim.opt.signcolumn = "no"
 vim.opt.colorcolumn = "80"
 -- utile per gestire gli split
-vim.opt.mouse = "v"
+vim.opt.mouse = "a"
 
 vim.opt.undofile = true
 vim.opt.termguicolors = true

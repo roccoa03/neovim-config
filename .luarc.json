@@ -1,5 +1,6 @@
 {
     "diagnostics.globals": [
-        "MiniDeps"
+        "MiniDeps",
+        "vim"
     ]
 }

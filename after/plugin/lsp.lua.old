@@ -19,3 +19,4 @@ vim.diagnostic.config({
   signs = true,
   virtual_text = true
 })
+

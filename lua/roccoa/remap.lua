@@ -46,3 +46,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 --vim.keymap.set("n", "<leader>v","" )
+--
+vim.keymap.set("n","<leader>ts","!tomcat10.start")
+vim.keymap.set("n","<leader>tr","!tomcat10.stop")
